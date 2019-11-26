@@ -15,7 +15,7 @@ package frc.robot;
  */
 public class RobotMap {
   public static enum CANSparkMaxID {
-    kLeft1(1, "Left1"), kLeft2(2, "Left2"), kRight1(3, "Right1"), kRight2(4, "Right2");
+    kLeft1(14, "Left1"), kLeft2(15, "Left2"), kRight1(1, "Right1"), kRight2(16, "Right2");
 
     public final int id;
     public final String name;

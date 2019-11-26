@@ -8,6 +8,8 @@
 package frc.robot;
 
 import frc.robot.RobotMap;
+import frc.robot.Robot;
+import frc.robot.subsystems.DriveTrain;
 
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
@@ -24,7 +26,7 @@ public class OI {
   private static JoystickButton driverA = new JoystickButton(driver, 1);
 
   static {
-    driverA.whenPressed();
+    driverA.whenPressed(Robot.driveTrain.toggleDriveTrain);
   }
 
   public static double arcadeDriveY() {
