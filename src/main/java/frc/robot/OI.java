@@ -7,15 +7,9 @@
 
 package frc.robot;
 
-import frc.robot.RobotMap;
-import frc.robot.Robot;
-import frc.robot.subsystems.DriveTrain;
-
 import edu.wpi.first.wpilibj.GenericHID.Hand;
-import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.buttons.POVButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
