@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -27,6 +28,8 @@ public class Robot extends TimedRobot {
   public static DriveTrain driveTrain = new DriveTrain();
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
+
+  public static final PowerDistributionPanel pdp = new PowerDistributionPanel();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -114,9 +117,9 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
-    }
+    // if (m_autonomousCommand != null) {
+    // m_autonomousCommand.cancel();
+    // }
   }
 
   /**

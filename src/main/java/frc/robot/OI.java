@@ -23,10 +23,14 @@ import edu.wpi.first.wpilibj.buttons.POVButton;
  */
 public class OI {
   private static XboxController driver = new XboxController(0);
-  private static JoystickButton driverA = new JoystickButton(driver, 1);
+  // private static JoystickButton driverA = new JoystickButton(driver, 1);
 
   static {
-    driverA.whenPressed(Robot.driveTrain.toggleDriveTrain);
+    // driverA.whenPressed(Robot.driveTrain.toggleDriveTrain);
+  }
+
+  public static double testMotor() {
+    return driver.getX(Hand.kRight);
   }
 
   public static double arcadeDriveY() {

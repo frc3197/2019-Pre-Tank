@@ -7,20 +7,23 @@
 
 package frc.robot.commands;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 import frc.robot.Robot;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.TestMotor;
 
 /**
  * An example command. You can replace me with your own command.
  */
-public class Drive extends Command {
-  private DriveTrain driveTrain = new DriveTrain();
+public class TesterMotor extends Command {
+  TestMotor testMotor = new TestMotor();
 
-  public Drive(DriveTrain driveTrain) {
-    // Use requires() here to declare subsystem dependencies
-    requires(driveTrain);
+  public TesterMotor(TestMotor testMotor) {
+    // Usse requires() here to declare subsystem dependencies
+    requires(testMotor);
   }
 
   // Called just before this Command runs the first time
@@ -31,16 +34,7 @@ public class Drive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    // if (driveTrain.arcadeDrive) {
-    double y = OI.arcadeDriveY();
-    double arcadeR = OI.arcadeDriveR();
-    driveTrain.arcadeDrive(y, arcadeR);
-    // // } else {
-    // double tankR = OI.tankDriveRight();
-    // double l = OI.tankDriveLeft();
-    // driveTrain.tankDrive(tankR, l);
-    // }
-
+    testMotor.driveMotor();
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -52,11 +46,6 @@ public class Drive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    // if (driveTrain.arcadeDrive) {
-    driveTrain.arcadeDrive(0, 0);
-    // } else {
-    // driveTrain.tankDrive(0, 0);
-    // }
   }
 
   // Called when another command which requires one or more of the same

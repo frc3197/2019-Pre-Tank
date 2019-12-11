@@ -34,16 +34,18 @@ public class DriveTrain extends Subsystem {
 
   private DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
-  public FunctionCommand toggleDriveTrain = new FunctionCommand(this::toggleDriveTrain);
+  // public FunctionCommand toggleDriveTrain = new
+  // FunctionCommand(this::toggleDriveTrain);
 
-  public boolean arcadeDrive = false;
+  // public boolean arcadeDrive = false;
 
   public DriveTrain() {
+    super();
     l1SparkMax.setIdleMode(IdleMode.kBrake);
     l2SparkMax.setIdleMode(IdleMode.kBrake);
     r1SparkMax.setIdleMode(IdleMode.kBrake);
     r2SparkMax.setIdleMode(IdleMode.kBrake);
-
+    drive.setDeadband(0.02);
   }
 
   @Override
@@ -57,15 +59,15 @@ public class DriveTrain extends Subsystem {
     drive.arcadeDrive(y, r, true);
   }
 
-  public void tankDrive(double r, double l) {
-    drive.tankDrive(l, r, true);
-  }
+  // public void tankDrive(double r, double l) {
+  // drive.tankDrive(l, r, true);
+  // }
 
-  public void toggleDriveTrain() {
-    if (arcadeDrive) {
-      arcadeDrive = false;
-    } else {
-      arcadeDrive = true;
-    }
-  }
+  // public void toggleDriveTrain() {
+  // if (arcadeDrive) {
+  // arcadeDrive = false;
+  // } else {
+  // arcadeDrive = true;
+  // }
+  // }
 }
