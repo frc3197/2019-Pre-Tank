@@ -16,7 +16,6 @@ import frc.robot.subsystems.DriveTrain;
  * An example command. You can replace me with your own command.
  */
 public class Drive extends Command {
-  private DriveTrain driveTrain;
 
   public Drive(DriveTrain driveTrain) {
     // Use requires() here to declare subsystem dependencies
@@ -31,15 +30,15 @@ public class Drive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (driveTrain.arcadeDrive) {
-      double y = OI.arcadeDriveY();
-      double arcadeR = OI.arcadeDriveR();
-      driveTrain.arcadeDrive(y, arcadeR);
-    } else {
-      double tankR = OI.tankDriveRight();
-      double l = OI.tankDriveLeft();
-      driveTrain.tankDrive(tankR, l);
-    }
+    // if (driveTrain.arcadeDrive) {
+    double y = OI.arcadeDriveY();
+    double arcadeR = OI.arcadeDriveR();
+    Robot.driveTrain.arcadeDrive(y, arcadeR);
+    // } else {
+    // double tankR = OI.tankDriveRight();
+    // double l = OI.tankDriveLeft();
+    // driveTrain.tankDrive(tankR, l);
+    // }
 
   }
 
@@ -52,11 +51,11 @@ public class Drive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    if (driveTrain.arcadeDrive) {
-      driveTrain.arcadeDrive(0, 0);
-    } else {
-      driveTrain.tankDrive(0, 0);
-    }
+    // if (driveTrain.arcadeDrive) {
+    Robot.driveTrain.arcadeDrive(0, 0);
+    // } else {
+    // driveTrain.tankDrive(0, 0);
+    // }
   }
 
   // Called when another command which requires one or more of the same
