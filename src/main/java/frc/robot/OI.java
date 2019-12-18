@@ -8,6 +8,7 @@
 package frc.robot;
 
 import frc.robot.RobotMap;
+import frc.robot.commands.autocommands.DriveStraight;
 import frc.robot.Robot;
 import frc.robot.subsystems.DriveTrain;
 
@@ -24,9 +25,11 @@ import edu.wpi.first.wpilibj.buttons.POVButton;
 public class OI {
   private static XboxController driver = new XboxController(0);
   private static JoystickButton driverA = new JoystickButton(driver, 1);
+  private static JoystickButton driverB = new JoystickButton(driver, 2);
 
-  static {
-    driverA.whenPressed(Robot.driveTrain.toggleDriveTrain);
+  public OI() {
+    driverA.whenPressed(new DriveStraight(12, Robot.driveTrain));
+    driverB.whenPressed(new DriveStraight(24, Robot.driveTrain));
   }
 
   public static double arcadeDriveY() {
